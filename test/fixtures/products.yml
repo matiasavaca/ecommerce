@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+iphone:
+  title: iphone 11
+  description: nuevo, 256 gb 8gb ram
+  price: 200
+
+iphone:
+  title: iphone 14
+  description: nuevo, 512 gb 8gb ram
+  price: 300
