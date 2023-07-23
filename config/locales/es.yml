@@ -33,6 +33,7 @@ es:
       all: 'Todos'
       min_price: 'Precio minimo'
       max_price: 'Precio maximo'
+      query_text: 'Que quieres buscar?'
     show:
       edit: 'Editar producto'
       delete: 'Borrar producto'
