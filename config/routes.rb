@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   # get '/products/:id/edit', to: 'products#edit', as: :edit_product
   resources :categories, except: :show
   resources :products
+
+  namespace :authentication, path: '', as: '' do
+    resources :users, only: %i[new create]
+  end
 end
