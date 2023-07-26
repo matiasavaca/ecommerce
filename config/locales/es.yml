@@ -20,11 +20,26 @@ es:
               blank: 'no puede estar vacía'
             price:
               blank: 'no puede estar vacío'
+      models:
+        user:
+          attributes:
+            username:
+              too_long: "es demasiado largo"
+              invalid: "es inválido"
+              taken: "ya está en uso"
+      messages:
+        too_long: "es demasiado largo"
+        invalid: "es inválido"
+        taken: "ya está en uso"
   common:
     confirm: '¿Estás seguro?'
   shared:
     header:
       add: 'Añadir producto'
+  authentication:
+    users:
+      create:
+        created: 'Tu cuenta a sido creada correctamente!'
   products:
     edit:
       title: 'Editar producto'

@@ -20,11 +20,26 @@ en:
               blank: "can't be blank"
             price:
               blank: "can't be blank"
+      models:
+        user:
+          attributes:
+            username:
+              too_long: "it's too long"
+              invalid: "is invalid"
+              taken: "already exists"
+      messages:
+        too_long: "it's too long"
+        invalid: "is invalid"
+        taken: "already exists"
   common:
     confirm: 'Are you sure?'
   shared:
     header:
       add: 'Add product'
+  authentication:
+    users:
+      create:
+        created: 'Your account has been successfully created'
   products:
     edit:
       title: 'Edit product'
