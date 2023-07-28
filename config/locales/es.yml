@@ -33,6 +33,8 @@ es:
         taken: "ya está en uso"
   common:
     confirm: '¿Estás seguro?'
+    back: 'Atras'
+    not_logged_in: 'Tienes que iniciar sesión o crear una cuenta'
   shared:
     header:
       add: 'Añadir producto'
