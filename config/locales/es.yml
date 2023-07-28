@@ -40,6 +40,10 @@ es:
     users:
       create:
         created: 'Tu cuenta a sido creada correctamente!'
+    sessions:
+      create:
+        created: 'Benvenido!'
+        failed: 'Login invalido'
   products:
     edit:
       title: 'Editar producto'

@@ -2,6 +2,10 @@ puts 'Destruyendo categorias y productos viejos'
 Product.destroy_all
 Category.destroy_all
 
+puts 'Creando usuario'
+
+usuario1 = User.create(email: "matias@gmail.com", password: "123456", username: "matias")
+
 puts 'Creando categorias'
 categoria1 = Category.create(name: "Pc armada")
 categoria2 = Category.create(name: "Celulares")
