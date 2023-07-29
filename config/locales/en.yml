@@ -4,33 +4,20 @@ en:
   activerecord:
     models:
       product: Product
+      user: User
+      category: Category
     attributes:
       product:
         title: 'Title'
         description: 'Description'
         price: 'Price'
         photo: 'Photo'
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: "can't be blank"
-            description:
-              blank: "can't be blank"
-            price:
-              blank: "can't be blank"
-      models:
-        user:
-          attributes:
-            username:
-              too_long: "it's too long"
-              invalid: "is invalid"
-              taken: "already exists"
-      messages:
-        too_long: "it's too long"
-        invalid: "is invalid"
-        taken: "already exists"
+      user:
+        email: 'Email'
+        username: 'Username'
+        password: 'Password'
+      category:
+        name: 'Name'
   common:
     confirm: 'Are you sure?'
     back: 'Go back'
@@ -38,6 +25,9 @@ en:
   shared:
     header:
       add: 'Add product'
+      login: 'Login'
+      register: 'Register'
+      logout: 'Logout'
   authentication:
     users:
       create:
@@ -46,6 +36,8 @@ en:
       create:
         created: 'Welcome!'
         failed: 'Invalid login'
+      destroy:
+        destroyed: 'Your session has been successfully closed'
   products:
     edit:
       title: 'Edit product'
