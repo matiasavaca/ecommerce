@@ -10,7 +10,6 @@ class User < ApplicationRecord
   validates :password_digest, length: { minimum: 6 }
 
   before_save :downcase_attributes
-  has_many :products, dependent: :destroy
 
   private
 
