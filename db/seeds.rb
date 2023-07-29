@@ -6,6 +6,7 @@ puts 'Creando usuario'
 
 usuario1 = User.create(email: "matias@gmail.com", password: "123456", username: "matias")
 usuario2 = User.create(email: "carlos@gmail.com", password: "123456", username: "carlos")
+usuario3 = User.create(email: "cecilia@gmail.com", password: "123456", username: "cecilia", admin: true)
 
 puts 'Creando categorias'
 categoria1 = Category.create(name: "Pc armada")
@@ -36,3 +37,5 @@ Product.create(title: 'Tenedores', description: 'set de 12 tenedores', price: 40
 
 Product.create(title: 'Pc Intel 32 RAM', description: '32gb ram 512 gb ssd', price: 190, category: categoria1, user_id: usuario2.id)
 Product.create(title: 'TV SONY', description: '70 pulgadas full HD', price: 490, category: categoria3, user_id: usuario1.id)
+
+Product.create(title: 'TV SONY', description: '80 pulgadas full HD', price: 590, category: categoria3, user_id: usuario3.id)
