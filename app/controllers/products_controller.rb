@@ -1,6 +1,6 @@
 # classProducts
 class ProductsController < ApplicationController
-  before_action :find_product, only: %i[show edit update destroy]
+  before_action :product, only: %i[show edit update destroy]
   skip_before_action :protect_pages, only: %i[index show]
 
   def index
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Products.new(product_params)
+    @product = Product.new(product_params)
     if @product.save
       redirect_to products_path, notice: t('.created')
     else
@@ -25,12 +25,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    authorize! @product
+    authorize! product
   end
 
   def update
-    authorize! @product
-    if @product.update(product_params)
+    authorize! product
+    if product.update(product_params)
       redirect_to products_path, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
@@ -38,8 +38,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    authorize! @product
-    @product.destroy
+    authorize! product
+    product.destroy
     redirect_to products_path, alert: t('.destroyed', default: 'Product destroyed successfully'), status: :see_other
   end
 
@@ -50,12 +50,10 @@ class ProductsController < ApplicationController
   end
 
   def product_params_index
-   params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page)
+   params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page, :favorites, :user_id)
   end
 
-  def find_product
-    @product = Product.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect_to products_path, alert: t('.not_found'), status: :not_found
+  def product
+    @product ||= Product.find(params[:id])
   end
 end

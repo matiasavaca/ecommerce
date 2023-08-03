@@ -23,12 +23,14 @@ en:
     back: 'Go back'
     not_logged_in: 'You have to login or create an account'
     not_authorized: 'You are not authorized to perform this action'
+    not_found: 'Usuario no encontrado'
   shared:
     header:
       add: 'Add product'
       login: 'Login'
       register: 'Register'
       logout: 'Logout'
+      favorites: 'My favorites'
   authentication:
     users:
       create:
@@ -56,6 +58,8 @@ en:
     show:
       edit: 'Edit product'
       delete: 'Delete product'
+      #interpola variable con el %{ username}
+      view_more_products: 'View more products by %{username}'
     create:
       created: 'Your product has been successfully created'
     update:
@@ -79,3 +83,10 @@ en:
       destroyed: 'your category has been successfully destroyed'
     new:
       title: 'New Category'
+  favorites:
+    create:
+      created: 'Your product has been added to favorites'
+    destroy:
+      destroyed: 'Your product has been removed from favorites'
+    index:
+      title: 'My favorites'

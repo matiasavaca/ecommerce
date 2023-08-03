@@ -74,3 +74,5 @@ group :test do
 end
 
 gem "pagy", "~> 6.0"
+
+gem "tailwindcss-rails", "~> 2.0"
