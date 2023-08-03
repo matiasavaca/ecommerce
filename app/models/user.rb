@@ -9,6 +9,8 @@ class User < ApplicationRecord
     format: { with: /\A[a-zA-Z0-9_]+\z/, message: :invalid}
   validates :password_digest, length: { minimum: 6 }
 
+  has_many :products, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   before_save :downcase_attributes
 
   private

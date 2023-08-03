@@ -23,12 +23,14 @@ es:
     back: 'Atras'
     not_logged_in: 'Tienes que iniciar sesión o crear una cuenta'
     not_authorized: 'No estas autorizado para realizar esta acción'
+    not_found: 'Usuario no encontrado'
   shared:
     header:
       add: 'Añadir producto'
       login: 'Acceso'
       register: 'Registro'
       logout: 'Salir'
+      favorites: 'Mis Favoritos'
   authentication:
     users:
       create:
@@ -56,6 +58,8 @@ es:
     show:
       edit: 'Editar producto'
       delete: 'Borrar producto'
+      #interpola variable con el %{ username}
+      view_more_products: 'Ver mas productos de %{username}'
     create:
       created: 'Tu producto se ha creado correctamente'
     update:
@@ -79,3 +83,10 @@ es:
       destroyed: 'Tu categoría se ha eliminado correctamente'
     new:
       title: 'Añadir categoría'
+  favorites:
+    create:
+      created: 'Tu producto se ha añadido a favoritos'
+    destroy:
+      destroyed: 'Tu producto se ha eliminado de favoritos'
+    index:
+      title: 'Mis favoritos'
