@@ -1,0 +1,9 @@
+<div id="<%= dom_id(product) %>">
+  <h1><%= product.title.capitalize %></h1>
+
+  <p style="word-wrap: break-word; overflow-wrap: break-word; max-width: 80%;"><%= product.description %></p>
+  
+  <span>$<%= product.price %></span>
+
+  <%= image_tag product.photo, width: 400 if product.photo.attached? %>
+</div>

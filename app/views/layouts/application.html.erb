@@ -10,10 +10,13 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body>
+  <!-- esto va bg-gray-200-->
+  <body class="bg-gray-400">
     <%= render 'shared/flash' %>
     <%= render 'shared/header' %>
-    <%= yield %>
+    <div class="lg:container lg:mx-auto">
+      <%= yield %>
+    </div>
+    <%= turbo_frame_tag "modal" %>
   </body>
 </html>

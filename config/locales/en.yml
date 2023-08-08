@@ -25,7 +25,7 @@ en:
     not_authorized: 'You are not authorized to perform this action'
     not_found: 'Usuario no encontrado'
   shared:
-    header:
+    items:
       add: 'Add product'
       login: 'Login'
       register: 'Register'
@@ -90,3 +90,6 @@ en:
       destroyed: 'Your product has been removed from favorites'
     index:
       title: 'My favorites'
+  user_mailer:
+    welcome:
+      welcome_message: 'Hey %{username}, welcome to E-Shop'
