@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true,
     length: { in: 3..15 },
     format: { with: /\A[a-zA-Z0-9_]+\z/, message: :invalid}
-  validates :password_digest, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, if: :password_digest_changed?
 
   has_many :products, dependent: :destroy
   has_many :favorites, dependent: :destroy

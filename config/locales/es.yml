@@ -25,7 +25,7 @@ es:
     not_authorized: 'No estas autorizado para realizar esta acción'
     not_found: 'Usuario no encontrado'
   shared:
-    header:
+    items:
       add: 'Añadir producto'
       login: 'Acceso'
       register: 'Registro'
@@ -49,8 +49,8 @@ es:
     index:
       title: 'Productos:'
       all: 'Todos'
-      min_price: 'Precio minimo'
-      max_price: 'Precio maximo'
+      min_price: 'Precio min'
+      max_price: 'Precio max'
       query_text: 'Que quieres buscar?'
       newest: 'Añadidos recientemente'
       expensive: 'Mas caros'
@@ -90,3 +90,6 @@ es:
       destroyed: 'Tu producto se ha eliminado de favoritos'
     index:
       title: 'Mis favoritos'
+  user_mailer:
+    welcome:
+      welcome_message: 'Hola %{username}, bienvenido a E-Shop'
