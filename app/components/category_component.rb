@@ -17,7 +17,7 @@ class CategoryComponent < ViewComponent::Base
   end
 
   def classes
-    "flex text-gray-600 px-4 rounded-2xl drop-shadow-sm hover:bg-gray-500 items-center #{background}"
+    "flex text-gray-600 px-4 rounded-2xl drop-shadow-sm hover:bg-gray-500 items-center mr-2 #{background}"
   end
 
   def active?

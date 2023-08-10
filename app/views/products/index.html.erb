@@ -10,12 +10,12 @@
     </div>
   <% end %>
 
-  <div class="flex lg:overflow-x-auto sm:overflow-x-scrollgap-2 my-3">
+  <div class="flex lg:overflow-x-auto sm:overflow-x-scrollgap-2 my-3 mr-2">
   <%= render(CategoryComponent.new) %>
   <%= render(CategoryComponent.with_collection(@categories)) %>
   </div>
 
-    <%= turbo_frame_tag :products, class:"flex flex-col m-2" do %>
+    <%= turbo_frame_tag :products, class:"flex flex-col m-2 rounded-xl" do %>
       <%= turbo_frame_tag "products-#{@pagy.page}", class:'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2' do %>
         <%= render partial: 'product', collection: @products %>
         <%= turbo_frame_tag "products-#{@pagy.next}", class:'products flex flex-col w-full sm:flex-row sm:flex-wrap sm:gap-x-2', src: pagy_url_for(@pagy, @pagy.next), loading: :lazy if @pagy.next %>

@@ -30,7 +30,7 @@ es:
       login: 'Acceso'
       register: 'Registro'
       logout: 'Salir'
-      favorites: 'Mis Favoritos'
+      favorites: 'Favoritos'
   authentication:
     users:
       create:
@@ -59,6 +59,7 @@ es:
       edit: 'Editar producto'
       delete: 'Borrar producto'
       #interpola variable con el %{ username}
+    product_details:
       view_more_products: 'Ver mas productos de %{username}'
     create:
       created: 'Tu producto se ha creado correctamente'
@@ -89,7 +90,7 @@ es:
     destroy:
       destroyed: 'Tu producto se ha eliminado de favoritos'
     index:
-      title: 'Mis favoritos'
+      title: 'Favoritos'
   user_mailer:
     welcome:
       welcome_message: 'Hola %{username}, bienvenido a E-Shop'
