@@ -1,27 +1,59 @@
-<%= form_with(model: @user) do |form| %>
-<% @user.errors.full_messages.each do |error| %>
-    <div>
+<%= form_with(model: @user, local: true, class: "container max-w-full mx-auto md:py-24 px-6") do |form| %>
+
+  <% @user.errors.full_messages.each do |error| %>
+    <div class="alert alert-danger">
       <%= error %>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
+  <div class="text-center font-semibold text-black pt-4">
+    Registrate!
+  </div>
+  <div class="text-center font-base text-black">
+    Completa todos los campos
   </div>
 
-  <div>
-    <%= form.label :username %>
-    <%= form.text_field :username, required: true %>
-  </div>
+  <div class="max-w-sm mx-auto px-6">
+    <div class="relative flex flex-wrap">
+      <div class="w-full relative">
+        <div class="md:mt-6">
 
+          <div class="mx-auto max-w-lg ">
+            <div class="py-1">
+              <%= form.label :email, class: "px-1 text-sm text-gray-600" %>
+              <%= form.email_field :email, class: "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none", required: true %>
+            </div>
 
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
+            <div class="py-1">
+              <%= form.label :username, "Username", class: "px-1 text-sm text-gray-600" %>
+              <%= form.text_field :username, class: "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none", required: true %>
+            </div>
 
-  <div>
-    <%= form.submit %>
+            <div class="py-1">
+              <%= form.label :password, class: "px-1 text-sm text-gray-600" %>
+              <%= form.password_field :password, class: "text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none", required: true %>
+            </div>
+
+            <div class="flex justify-start">
+              <label class="text-gray-500 font-bold my-4 flex items-center">
+                <input class="leading-loose text-pink-600 top-0" type="checkbox"/>
+                <span class="ml-2 text-sm py-2 text-gray-600 text-left">Accept the
+                  <a href="#" class="font-semibold text-black border-b-2 border-gray-200 hover:border-gray-500">
+                    Terms and Conditions of the site
+                  </a> and
+                  <a href="#" class="font-semibold text-black border-b-2 border-gray-200 hover:border-gray-500">
+                    the information data policy.
+                  </a>
+                </span>
+              </label>
+            </div>
+
+            <%= form.submit "Submit", class: "mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>

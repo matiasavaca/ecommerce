@@ -1,0 +1,25 @@
+<div class="flex space-between">
+  <div class="mr-2 ml-2">
+    <%= link_to t('.add'),  new_product_path, class: "text-teal-500 font-bold", data: {turbo_frame: "modal"} if Current.user %>
+  </div>
+  <div class="mr-2 ml-2">
+    <%= link_to t('.favorites'),  favorites_path, class: "text-teal-500 font-bold" if Current.user %>
+  </div>
+  <div class="mr-2 ml-2">
+    <%= link_to t('.categories'), categories_path, class: "text-teal-500 font-bold" if Current.user&.admin?%>
+  </div>
+  <div class="mr-2 ml-2">
+    <%= link_to t('.login'), new_session_path, class: "text-teal-500 font-bold" unless Current.user %>
+  </div>
+  <div class="mr-2 ml-2">
+    <%= link_to t('.register'), new_user_path, class: "text-teal-500 font-bold" unless Current.user%>
+  </div>
+  <div class="mr-2 ml-2">
+    <%= link_to t('.logout'), session_path(Current.user), data: {turbo_method: :delete,
+          turbo_confirm: t('common.confirm')
+          }, class: "mx-2 text-teal-500 font-bold" if Current.user%>
+  </div>
+
+  <div>
+  </div>
+</div>

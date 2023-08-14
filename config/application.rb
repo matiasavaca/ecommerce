@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Ecommerce
+module Vendelo
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -19,11 +19,16 @@ module Ecommerce
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    #available languages
-    config.i18n.available_locales = %i[en es]
+    # available languages
+    config.i18n.available_locales = [:en, :es]
+
+    # lenguage by default
     config.i18n.default_locale = :es
 
-    #allow multiquery
+    # Allow multiquery
     config.active_record.async_query_executor = :global_thread_pool
+
+    # Background job
+    config.active_job.queue_adapter = :sidekiq
   end
 end

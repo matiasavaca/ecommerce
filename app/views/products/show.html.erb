@@ -1,15 +1,9 @@
-<h1><%= @product.title.capitalize %></h1>
-
-<p style="word-wrap: break-word; overflow-wrap: break-word; max-width: 80%;"><%= @product.description %></p>
-<span>$<%= @product.price %></span>
-<%= image_tag @product.photo, width: 400 if @product.photo.attached? %>
-
-
-<%= link_to t('.edit'), edit_product_path(@product) if @product.owner? %>
-
-<%= link_to t('.delete'), product_path(@product), data: { turbo_method: :delete, turbo_confirm: t('common.confirm')} if @product.owner? %>
-
-<%= render partial: 'favorite', locals: {product: @product} %>
-
-
-<%= link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
+<div class="container flex h-screen justify-center items-center">
+  <div class="w-3/5 h-3/5 bg-white flex flex-col justify-between p-4 rounded-xl"> <!-- Cambiamos 'justify-center' a 'justify-between' -->
+    <h1 class="text-3xl text-center" ><%= @product.title %></h1>
+    <!-- Tarjeta del Producto -->
+    <div class="flex-grow flex flex-col justify-center">
+      <%= render partial: 'products/product_details', locals: { product: @product } %>
+    </div>
+  </div>
+</div>

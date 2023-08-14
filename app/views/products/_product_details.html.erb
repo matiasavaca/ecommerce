@@ -1,0 +1,96 @@
+<div class="flex font-serif ">
+  <div class="flex-none w-52 relative">
+    <%= image_tag product.photo , width: 400, class:"absolute inset-0 w-full h-full object-cover rounded-lg" if product.photo.attached? %>
+      </div>
+      <form class="flex-auto p-6">
+        <div class="flex flex-wrap items-baseline relative py-4">
+          <div class="absolute top-0 right-0 flex">
+            <div class="mr-3">
+              <% if @product.owner? %>
+                <%= link_to edit_product_path(@product) do %>
+                  <i class="fa-regular fa-pen-to-square"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <div>
+              <% if @product.owner? %>
+                <div class="mi-3">
+                  <%= link_to product_path(@product), data: { turbo_method: :delete, turbo_confirm: t('common.confirm') } do %>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="flex-auto text-lg font-medium text-slate-900 py-2">
+            <span>$<%= product.price %></span>
+          </div>
+          <div class="text-xs leading-6 font-medium uppercase text-slate-900 py-2">
+            In stock
+          </div>
+        </div>
+          <p style="word-wrap: break-word; overflow-wrap: break-word; max-width: 80%;"><%= product.description %></p>
+        <div class="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
+          <div class="space-x-1 flex text-sm font-medium">
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="xs" checked />
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-slate-900 peer-checked:bg-slate-100 peer-checked:text-slate-900">
+                XS
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="s" />
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-slate-900 peer-checked:bg-slate-100 peer-checked:text-slate-900">
+                S
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="m" />
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-slate-900 peer-checked:bg-slate-100 peer-checked:text-slate-900">
+                M
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="l" />
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-slate-900 peer-checked:bg-slate-100 peer-checked:text-slate-900">
+                L
+              </div>
+            </label>
+            <label>
+              <input class="sr-only peer" name="size" type="radio" value="xl" />
+              <div class="w-7 h-7 rounded-full flex items-center justify-center text-slate-900 peer-checked:bg-slate-100 peer-checked:text-slate-900">
+                XL
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="flex space-x-4 mb-5 text-sm font-medium">
+          <div class="flex-auto flex space-x-4 pr-4">
+            <button class="flex-none w-1/2 h-12 uppercase font-medium tracking-wider bg-slate-900 text-white" type="submit">
+              Buy now
+            </button>
+            <button class="flex-none w-1/2 h-12 uppercase font-medium tracking-wider border border-slate-200 text-slate-900" type="button">
+              Add to bag
+            </button>
+          </div>
+          <button class="flex-none flex items-center justify-center w-12 h-12 text-red-700 border border-slate-200" type="button" aria-label="Like">
+            <%= render partial: 'favorite', locals: {product: @product} %>
+          </button>
+        </div>
+        <p class="text-sm text-slate-900">
+          Free shipping on all continental US orders.
+        </p>
+      </form>
+      </div>
+    </div>
+
+
+
+      <div class="flex ">
+        <div class="m-4">
+          <%= link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
+        </div>
+        <div class="m-4">
+          <%= turbo_stream_from @product %>
+        </div>
+      </div>

@@ -25,12 +25,12 @@ es:
     not_authorized: 'No estas autorizado para realizar esta acción'
     not_found: 'Usuario no encontrado'
   shared:
-    header:
+    items:
       add: 'Añadir producto'
       login: 'Acceso'
       register: 'Registro'
       logout: 'Salir'
-      favorites: 'Mis Favoritos'
+      favorites: 'Favoritos'
   authentication:
     users:
       create:
@@ -49,8 +49,8 @@ es:
     index:
       title: 'Productos:'
       all: 'Todos'
-      min_price: 'Precio minimo'
-      max_price: 'Precio maximo'
+      min_price: 'Precio min'
+      max_price: 'Precio max'
       query_text: 'Que quieres buscar?'
       newest: 'Añadidos recientemente'
       expensive: 'Mas caros'
@@ -59,6 +59,7 @@ es:
       edit: 'Editar producto'
       delete: 'Borrar producto'
       #interpola variable con el %{ username}
+    product_details:
       view_more_products: 'Ver mas productos de %{username}'
     create:
       created: 'Tu producto se ha creado correctamente'
@@ -89,4 +90,7 @@ es:
     destroy:
       destroyed: 'Tu producto se ha eliminado de favoritos'
     index:
-      title: 'Mis favoritos'
+      title: 'Favoritos'
+  user_mailer:
+    welcome:
+      welcome_message: 'Hola %{username}, bienvenido a E-Shop'
